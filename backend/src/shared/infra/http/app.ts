@@ -1,8 +1,10 @@
 import express from 'express'
+import 'reflect-metadata'
 
 import routes from './routes'
 
 import '@shared/infra/typeorm'
+import '@shared/containers'
 
 const app = express()
 

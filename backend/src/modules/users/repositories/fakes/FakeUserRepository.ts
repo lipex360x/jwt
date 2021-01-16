@@ -2,9 +2,9 @@ import { v4 as uuid } from 'uuid'
 import bcrypt from 'bcryptjs'
 
 import User from '@modules/users/infra/typeorm/entities/User'
-import IUsersInterface, { CreateProps } from '../interfaces/IUsersInterface'
+import IUsersRepository, { CreateProps } from '../interfaces/IUsersRepository'
 
-export default class FakeUserRepository implements IUsersInterface {
+export default class FakeUserRepository implements IUsersRepository {
   private repository: User[] = []
 
   async create ({ name, email, password }:CreateProps): Promise<User> {

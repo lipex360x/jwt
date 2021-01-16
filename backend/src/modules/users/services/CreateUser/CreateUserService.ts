@@ -3,7 +3,7 @@ import { inject, injectable } from 'tsyringe'
 // import AppError from '@shared/errors/AppError'
 
 import User from '@modules/users/infra/typeorm/entities/User'
-import IUsersInterface from '@modules/users/repositories/interfaces/IUsersInterface'
+import IUsersRepository from '@modules/users/repositories/interfaces/IUsersRepository'
 
 interface Request{
   name: string,
@@ -15,7 +15,7 @@ interface Request{
 export default class CreateUserService {
   constructor (
     @inject('UsersInterface')
-    private repository: IUsersInterface
+    private repository: IUsersRepository
   ) {}
 
   async execute ({ name, email, password }: Request): Promise<User> {
