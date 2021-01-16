@@ -16,5 +16,9 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "no-undef":"off",
+      "no-useless-constructor":"off",
+      "camelcase":"off",
+      "prefer-promise-reject-errors":"off"
     }
 }
