@@ -1,4 +1,6 @@
-const dir = 'src'
+require('dotenv').config()
+const dir = process.env.NODE_DIST === 'dev' ? 'src' : 'dist'
+
 module.exports = [
   {
     name: 'default',
