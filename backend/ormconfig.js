@@ -5,7 +5,7 @@ module.exports = [
   {
     name: 'default',
     type: 'sqlite',
-    database: './src/shared/infra/http/typeorm/database.sqlite',
+    database: `./${dir}/shared/infra/http/typeorm/database.sqlite`,
 
     migrations: [`./${dir}/shared/infra/typeorm/migrations/*.{ts,js}`],
 

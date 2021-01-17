@@ -6,5 +6,5 @@ const server = app.listen(3333, () => {
 
 process.on('SIGINT', () => {
   server.close()
-  console.log('\n🔒 API Stopped')
+  console.log('🔒 API Stopped')
 })
