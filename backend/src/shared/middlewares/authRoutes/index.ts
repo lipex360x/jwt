@@ -18,8 +18,6 @@ export default function authMiddleware (request:Request, response:Response, next
   try {
     const decoded = verify(token, process.env.JWT_SECRET)
 
-    console.log(decoded)
-
     const { user_id } = decoded as TokenPayload
 
     request.user_id = user_id

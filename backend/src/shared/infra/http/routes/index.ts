@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
 import usersRoutes from '@modules/users/infra/http/routes/users.routes'
-import authRoutes from '@shared/middlewares/auth/routes/auth.routes'
+import authRoutes from '@shared/middlewares/authRoutes/routes/auth.routes'
 
 const routes = Router()
 
