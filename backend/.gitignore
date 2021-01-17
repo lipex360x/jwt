@@ -1,4 +1,6 @@
 .env
+ormconfig.js
+
 node_modules
 dist
 
