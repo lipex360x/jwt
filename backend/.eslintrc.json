@@ -16,9 +16,10 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "camelcase":"off",
       "no-undef":"off",
       "no-useless-constructor":"off",
-      "camelcase":"off",
+      "no-useless-escape":"off",
       "prefer-promise-reject-errors":"off"
     }
 }
