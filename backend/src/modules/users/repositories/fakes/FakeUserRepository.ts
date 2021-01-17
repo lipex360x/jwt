@@ -2,7 +2,7 @@ import { v4 as uuid } from 'uuid'
 import bcrypt from 'bcryptjs'
 
 import User from '@modules/users/infra/typeorm/entities/User'
-import IUsersRepository, { CreateProps } from '../interfaces/IUsersRepository'
+import IUsersRepository, { CreateProps, FindUserProps } from '../interfaces/IUsersRepository'
 
 export default class FakeUserRepository implements IUsersRepository {
   private repository: User[] = []
@@ -22,5 +22,11 @@ export default class FakeUserRepository implements IUsersRepository {
     this.repository.push(entity_data)
 
     return entity_data
+  }
+
+  async findUser ({ email }:FindUserProps): Promise<User> {
+    const getUser = this.repository.find(user => user.email === email)
+
+    return getUser
   }
 }

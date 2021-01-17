@@ -6,6 +6,11 @@ export interface CreateProps {
   password: string,
 }
 
+export interface FindUserProps {
+  email: string
+}
+
 export default interface IUsersInterface {
   create(data: CreateProps): Promise<User>
+  findUser(data: FindUserProps): Promise<User>
 }

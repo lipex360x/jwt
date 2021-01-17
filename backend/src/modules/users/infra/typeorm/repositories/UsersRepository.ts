@@ -1,7 +1,7 @@
 import { Repository, getRepository } from 'typeorm'
 
 import User from '../entities/User'
-import IUsersRepository, { CreateProps } from '@modules/users/repositories/interfaces/IUsersRepository'
+import IUsersRepository, { CreateProps, FindUserProps } from '@modules/users/repositories/interfaces/IUsersRepository'
 
 export default class UsersRepository implements IUsersRepository {
   private repository: Repository<User>
@@ -16,5 +16,11 @@ export default class UsersRepository implements IUsersRepository {
     await this.repository.save(setUser)
 
     return setUser
+  }
+
+  async findUser ({ email }:FindUserProps): Promise<User> {
+    const getUser = await this.repository.findOne({ where: { email } })
+
+    return getUser
   }
 }

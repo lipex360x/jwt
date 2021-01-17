@@ -1,3 +1,5 @@
+import AppError from '@shared/AppError/AppError'
+
 import FakeUserRepository from '@modules/users/repositories/fakes/FakeUserRepository'
 import CreateUserService from './CreateUserService'
 
@@ -18,5 +20,21 @@ describe('CreateUser', () => {
     })
 
     expect(user).toHaveProperty('user_id')
+  })
+
+  it('should not be able to create a duplicate user', async () => {
+    await fakeUserRepository.create({
+      name: 'Jonh Doe',
+      email: 'jonh@mail.com',
+      password: 'fakepasswd'
+    })
+
+    await expect(
+      createUserService.execute({
+        name: 'Jonh Doe',
+        email: 'jonh@mail.com',
+        password: 'fakepasswd'
+      })
+    ).rejects.toBeInstanceOf(AppError)
   })
 })
