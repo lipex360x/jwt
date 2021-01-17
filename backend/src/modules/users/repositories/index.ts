@@ -8,6 +8,6 @@ const providers = {
 }
 
 container.registerSingleton<IUsersInterface>(
-  'UsersInterface',
+  'UsersRepository',
   providers.sqliteDB
 )

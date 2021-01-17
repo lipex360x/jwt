@@ -7,13 +7,13 @@ import '@shared/infra/typeorm'
 import '@shared/containers'
 
 import routes from './routes'
-import appError from '@shared/AppError/RouterError'
+import routerError from '@shared/errors/RouterError'
 
 const app = express()
 
 app.use(express.json())
 app.use(routes)
 
-app.use(appError)
+app.use(routerError)
 
 export default app

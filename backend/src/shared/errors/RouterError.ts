@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express'
-import AppError from '@shared/AppError/AppError'
+import AppError from '@shared/errors/AppError'
 
 class RouterError {
   async execute (err: Error, request: Request, response: Response, _: NextFunction) {

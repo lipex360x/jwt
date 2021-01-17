@@ -1,4 +1,4 @@
-import AppError from '@shared/AppError/AppError'
+import AppError from '@shared/errors/AppError'
 
 import FakeUserRepository from '@modules/users/repositories/fakes/FakeUserRepository'
 import CreateUserService from './CreateUserService'
